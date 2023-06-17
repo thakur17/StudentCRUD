@@ -1,0 +1,45 @@
+﻿@page
+@model StudentCRUD.Pages.StudentList.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+
+    <h4></h4>
+    <hr />
+    <table class="table table-striped border">
+        <tr class="table-secondary">
+            <th>
+                <label asp-for="Students.Name"></label>
+            </th>
+            <th>
+
+                <label asp-for="Students.RollNo"></label>
+            </th>
+            <th>
+                <label asp-for="Students.ClassName"></label>
+            </th>
+            
+        </tr>
+        <tr>
+                <td>
+                    @Html.DisplayFor(m => Model.Students.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(m => Model.Students.RollNo)
+                </td>
+                <td>
+                    @Html.DisplayFor(m =>Model.Students.ClassName)
+                </td>
+                
+            </tr>
+
+    </table>
+
+<div>
+    <a asp-page="/StudentList/Upsert" asp-route-id="@Model.Students.ID">Edit</a>
+    <a asp-page="/StudentList/Index">Back to List</a>
+</div>
